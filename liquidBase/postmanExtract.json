@@ -1,0 +1,323 @@
+{
+  "info": {
+    "name": "API Test Collection 2",
+    "description": "Colección para probar los endpoints de transacciones, clientes, cuentas y movimientos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "POST - Crear Clientes",
+      "item": [
+        {
+          "name": "Cliente 100000 - Jose Lema",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"clienteid\":\"100000\",\"identificacion\":\"1235763296\",\"nombre\":\"Jose Lema\",\"direccion\":\"Otavalo sn y principal\",\"telefono\":\"098254785\",\"contrasena\":\"1234\",\"estado\":true}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/clientes",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "clientes"]
+            }
+          }
+        },
+        {
+          "name": "Cliente 100001 - Marianela Montalvo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"clienteid\":\"100001\",\"identificacion\":\"17223465323\",\"nombre\":\"Marianela Montalvo\",\"direccion\":\"Amazonas y NNUU\",\"telefono\":\"097548965\",\"contrasena\":\"5678\",\"estado\":true}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/clientes",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "clientes"]
+            }
+          }
+        },
+        {
+          "name": "Cliente 100002 - Juan Osorio",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"clienteid\":\"100002\",\"identificacion\":\"17523482735\",\"nombre\":\"Juan Osorio\",\"direccion\":\"13 junio y Equinoccial\",\"telefono\":\"098874587\",\"contrasena\":\"1245\",\"estado\":true}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/clientes",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "clientes"]
+            }
+          }
+        },
+        {
+          "name": "Cliente 100003 - Mateo Urrutia",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"clienteid\":\"100003\",\"identificacion\":\"175234564635\",\"nombre\":\"Mateo Urrutia\",\"direccion\":\"Quito\",\"telefono\":\"0988456487\",\"contrasena\":\"123214\",\"estado\":true}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/clientes",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "clientes"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "POST - Crear Cuentas",
+      "item": [
+        {
+          "name": "Cuenta 478758 - Cliente 100000",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"numeroCuenta\":\"478758\",\"tipoCuenta\":\"Ahorro\",\"saldo\":\"2000\",\"estado\":true,\"clienteId\":\"100000\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/cuentas",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "cuentas"]
+            }
+          }
+        },
+        {
+          "name": "Cuenta 225487 - Cliente 100001",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"numeroCuenta\":\"225487\",\"tipoCuenta\":\"Corriente\",\"saldo\":\"100\",\"estado\":true,\"clienteId\":\"100001\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/cuentas",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "cuentas"]
+            }
+          }
+        },
+        {
+          "name": "Cuenta 495878 - Cliente 100002",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"numeroCuenta\":\"495878\",\"tipoCuenta\":\"Ahorros\",\"saldo\":\"0\",\"estado\":true,\"clienteId\":\"100002\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/cuentas",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "cuentas"]
+            }
+          }
+        },
+        {
+          "name": "Cuenta 496825 - Cliente 100001",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"numeroCuenta\":\"496825\",\"tipoCuenta\":\"Ahorros\",\"saldo\":\"540\",\"estado\":true,\"clienteId\":\"100001\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/cuentas",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "cuentas"]
+            }
+          }
+        },
+        {
+          "name": "Cuenta 585545 - Cliente 100000",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"numeroCuenta\":\"585545\",\"tipoCuenta\":\"Corriente\",\"saldo\":\"1000\",\"estado\":true,\"clienteId\":\"100000\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/cuentas",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "cuentas"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "POST - Crear Movimientos",
+      "item": [
+        {
+          "name": "Movimiento Retiro - Cuenta 478758",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"numerocuenta\":\"478758\",\"tipomovimiento\":\"RETIRO\",\"valor\":\"575\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/movimientos",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "movimientos"]
+            }
+          }
+        },
+        {
+          "name": "Movimiento Deposito - Cuenta 225487",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"numerocuenta\":\"225487\",\"tipomovimiento\":\"DEPOSITO\",\"valor\":\"600\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/movimientos",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "movimientos"]
+            }
+          }
+        },
+        {
+          "name": "Movimiento Deposito - Cuenta 495878",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"numerocuenta\":\"495878\",\"tipomovimiento\":\"DEPOSITO\",\"valor\":\"150\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/movimientos",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "movimientos"]
+            }
+          }
+        },
+        {
+          "name": "Movimiento Retiro - Cuenta 496825",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"numerocuenta\":\"496825\",\"tipomovimiento\":\"RETIRO\",\"valor\":\"540\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/movimientos",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "movimientos"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

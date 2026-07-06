@@ -1,0 +1,175 @@
+insert into TRANSACCION(DESCRIPCION,FORMULA)values ("DEPOSITO","1");
+insert into TRANSACCION(DESCRIPCION,FORMULA)values ("RETIRO","-1");
+
+http://localhost:8080/api/transaccion
+
+{
+    "descripcion":"DEPOSITO",
+    "formula":"1"
+}
+
+{
+    "descripcion":"RETIRO",
+    "formula":"-1"
+}
+
+
+http://localhost:8080/api/clientes
+
+{
+  "clienteid":"100000",
+  "identificacion": "1235763296",
+  "nombre": "Jose Lema",
+  "direccion": "Otavalo sn y principal",
+  "telefono": "098254785",
+  "contrasena": "1234",
+  "estado": true
+}
+
+{
+  "clienteid":"100001",
+  "identificacion": "17223465323",
+  "nombre": "Marianela Montalvo",
+  "direccion": "Amazonas y NNUU",
+  "telefono": "097548965",
+  "contrasena": "5678",
+  "estado": true
+}
+
+
+{
+  "clienteid":"100002",
+  "identificacion": "17523482735",
+  "nombre": "Juan Osorio",
+  "direccion": "13 junio y Equinoccial",
+  "telefono": "098874587",
+  "contrasena": "1245",
+  "estado": "True"
+}
+
+{
+  "clienteid":"100003",
+  "identificacion": "175234564635",
+  "nombre": "Mateo Urrutia",
+  "direccion": "Quito",
+  "telefono": "0988456487",
+  "contrasena": "123214",
+  "estado": "True"
+}
+
+
+http://localhost:8080/api/cuentas
+
+{
+  "numeroCuenta": "478758",
+  "tipoCuenta": "Ahorro",
+  "saldoinicial": "2000",
+  "estado": "True",
+  "clienteId": "100000"
+}
+
+
+{
+  "numeroCuenta": "225487",
+  "tipoCuenta": "Corriente",
+  "saldoinicial": "100",
+  "estado": "True",
+  "clienteId": "100001"
+}
+
+{
+  "numeroCuenta": "495878",
+  "tipoCuenta": "Ahorros",
+  "saldoinicial": "0",
+  "estado": "True",
+  "clienteId": "100002"
+}
+
+
+
+{
+  "numeroCuenta": "496825",
+  "tipoCuenta": "Ahorros",
+  "saldoinicial": "540",
+  "estado": "True",
+  "clienteId": "100001"
+}
+
+{
+  "numeroCuenta": "585545",
+  "tipoCuenta": "Corriente",
+  "saldoinicial": "1000",
+  "estado": "True",
+  "clienteId": "100000"
+}
+
+
+
+http://localhost:8080/api/movimientos
+
+{
+	"numerocuenta":"478758",
+	"tipomovimiento":"RETIRO",
+	"valor":"575"
+}
+
+{
+	"numerocuenta":"225487",
+	"tipomovimiento":"DEPOSITO",
+	"valor":"600"
+}
+
+{
+	"numerocuenta":"495878",
+	"tipomovimiento":"DEPOSITO",
+	"valor":"150"
+}
+
+{
+	"numerocuenta":"496825",
+	"tipomovimiento":"RETIRO",
+	"valor":"540"
+}
+
+F3 saldo insuficiente prueba
+
+{
+	"numerocuenta":"478758",
+	"tipomovimiento":"RETIRO",
+	"valor":"1500"
+}
+
+
+F4 Consulta de reportes por fecha enlace
+
+GET http://localhost:8080/api/movimientos/reportes?fechaInicio=01/01/2024&fechaFin=31/12/2024
+
+
+F7 Ejecutar en contenedor
+
+Genearar el archivo "Dockerfile " en la carpeta del .jar sin formato con los siguientes comandos 
+--------------------------------------------------------------------------------------------------
+# Imagen Java
+FROM openjdk:22-jdk
+
+# Directorio del contenedor
+WORKDIR /app
+
+# copiado del archivo jar al contenedor
+COPY banquito-0.0.1-SNAPSHOT.jar /app/banquito.jar
+
+# exposicion del puerto que se va a escuchar
+EXPOSE 8080
+EXPOSE 3306
+
+# comando par ejecutar la aplicacion 
+ENTRYPOINT ["java", "-jar", "banquito.jar"]
+
+------------------------------------------------------------------------------------------------------
+Abrir cmd y dirigirse a la direccion del jar y el archivo Dockerfile
+
+Construir la imagen con el siguiente comando "docker build -t banquito-app ."
+
+Ejecutar el contenedor con el siguiente comando "docker run -d -p 8080:8080 --name banquito-container banquito-app"
+
+Verificar que el jar estece corriendo con el siguiente comando "docker ps"
